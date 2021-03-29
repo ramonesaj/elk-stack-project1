@@ -16,18 +16,18 @@ The IT automation engine, Ansible, was used to run playbooks. These playbooks ar
 which Ansible "runs" to install the D*mn Vulnerable Web Application (DVWA) container on each of the VMs.
 
 Starting Network
-!(Diagram/HW12DiagramFinal.png)
+![Image 1](Diagram/HW12DiagramFinal.png)
 
 - The Microsoft Azure UI was is easy to navigate. To create a VM or security group, all you need to do is select the particular service and add "New".
 This is how all the VMs, networks, load balancer, resource group, and security group were created.
 
-!(Images/Azure1.png)
+![Image 2](Images/Azure1.png)
 
-!(Images/AddNet.png)
+![Image 3](Images/AddNet.png)
 
-!(Images/CreateVM.png)
+![Image 4](Images/CreateVM.png)
 
-!(Images/VirtualMachines.png)
+![Image 5](Images/VirtualMachines.png)
 
 - After the services are created, you configure files to install the docker and containers for each web server. Ansible runs the playbook files that contain scripts
 for deployment. The YAML files used in this project can be found in the Ansible folder of the Git Hub repository.
@@ -43,7 +43,7 @@ The goal for this project was to conduct an automated deployment of ELK stack.
   - Introduction to GitHub fundamentals
   - Scripting using YAML (.yml) files and running them through Ansible
 
-!(Diagrams/ELK_Diagram.png)
+![Image 6](Diagrams/ELK_Diagram.png)
 
 Network Diagram
 
@@ -54,11 +54,11 @@ address. Internally, the jump box communicates through SSH with the 3 webservers
 security to the network because it acts as the sole "checkpoint" to the other virtual machines. The entire network is located behind a network security group which allows
 certain traffic from specific ip addresses to pass through and into the network.
 
- !(Images/RedNSGRules.png)
+ ![Image 7](Images/RedNSGRules.png)
 
- !(Images/RedPeering.png)
+ ![Image 8](Images/RedPeering.png)
 
- !(Images/ELKPeerings.png)
+ ![Image 9](Images/ELKPeerings.png)
 
 - Similarly, the ELK network consists of the Elk1 server VM which sits behind its own network security group. Peering connections allow communication with the Red Team
 network. The jump box can be use to connect with the Elk-1 server using SSH port 22. The ELK server was created with a docker and runs Kibana. The local machine connects
@@ -67,25 +67,25 @@ port 5044 to listen for incoming beat connections."(https://www.elastic.co/guide
 
 - Kibana port 5601
 
- !(Images/Kibana5601.png)
+ ![Image 10](Images/Kibana5601.png)
 
  Kibana
 
- !(Images/Kibana_Home.png)
+ ![Image 11](Images/Kibana_Home.png)
 
 Filebeat and Metricbeat
 
 - Filebeat and Metricbeat are both installed the same way using Ansible to "play" their respective playbook YAML files and configuration files.
 
- !(Images/Filebeat_play.png)
+ ![Image 12](Images/Filebeat_play.png)
 
- !(Images/Metricbeat_install.png)
+ ![Image 13](Images/Metricbeat_install.png)
 
 - To ensure Filebeat and Metricbeat were properly installed and data received from the module, click on check data.
 
- !(Diagrams/Filebeat_status.png)
+ ![Image 14](Diagrams/Filebeat_status.png)
  
- !(Diagrams/Metricbeat_status.png)
+ ![Image 15](Diagrams/Metricbeat_status.png)
 
 The ELK in Action!!!
 
@@ -96,6 +96,6 @@ monitoring capability can allow security analyst to hunt and detect potential th
 
 Web Traffic Analysis
 
-!(Images/Web_traffic1.png)
+![Image 16](Images/Web_traffic1.png)
 
-!(Images/WebTrafficChina.png)
+![Image 17](Images/WebTrafficChina.png)
