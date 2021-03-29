@@ -1,0 +1,24 @@
+PROJECT 1 SUMMARY
+
+
+Background
+
+- This project serves as a continuation of a previous lesson on Cloud Security where Azure was used to
+create a virtual network. Network security was provided by a network security group and a load balancer.
+A jump box provisioner was used as a control point to tunnel to three webservers (VMs) located in the network.
+The IT automation engine, Ansible, was used to run playbooks. These playbooks are created as YAML or .yml  
+files which Ansible "runs" to install the DVWA container on each of the VMs.  
+
+Objective
+
+The goal for this project was to deploy an automated ELK stack.
+- This project involved:
+  - An understanding of network architecture (network diagrams)
+  - Virtual network and virtual machine deployment using Azure
+  - Introduction to Kibana using Filebeat and Metricbeat
+  - Introduction to GitHub fundamentals
+  - Scripting using YAML (.yml) files with Ansible
+
+
+
+

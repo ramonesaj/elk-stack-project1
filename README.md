@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![ELK_Diagram.png](Diagrams/ELK_Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, $
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. 
 
 - (Ansible/elk-playbook.yml)
 - (Ansible/ilebeat-playbook.yml)
@@ -36,7 +36,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 -  What does Metricbeat record? Metricbeat collects metrics and statistics and takes them to the output that you select.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -92,8 +92,8 @@ We have installed the following Beats on these machines:
 - Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
--  Filebeat generates log files and will collect any information that has been changed in the system being monitored such as syslogs. Metricbeat collects quantitativ$
-(statistics) of different activities such as the number failed login attempts, system data (CPU/RAM usage), and attempts to escalate privileges.
+- Filebeat generates log files and will collect any information that has been changed in the system being monitored such as syslogs. Metricbeat collects quantitative
+data (statistics) of different activities such as the number failed login attempts, system data (CPU/RAM usage), and attempts to escalate privileges.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
@@ -106,31 +106,33 @@ SSH into the control node and follow the steps below:
  Answer the following questions to fill in the blanks:_
 - Which file is the playbook? Where do you copy it? The .yml such as elk1-playbook.yml is the playbook. It is copied to the Ansible Control Node.
 - Which file do you update to make Ansible run the playbook on a specific machine?_ Hosts file.
-- How do I specify which machine to install the ELK server on versus which to install Filebeat on?_You need to modify the file by adding the specific ip address of the ma$
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on?_You need to modify the file by adding the specific ip address of the
+  machine where Filebeat will be installed.
 - Which URL do you navigate to in order to check that the ELK server is running?_ curl http://10.1.0.6:5601
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-Copy and Download the Playbook:
-cd /etc/ansible
-mkdir files
-git clone https://github.com/username/elk-stack-project-1.git
 
-Move Playbooks and hosts file into /etc/ansible:
-cp elk-stack-project-1/playbooks/* .
-cp elk-stack-project-1/files/* ./files
+- Copy and Download the Playbook:
+  - cd /etc/ansible
+  - mkdir files
+  - git clone https://github.com/username/elk-stack-project-1.git
 
-Update host file:
-cd /etc/ansible
-hosts
-[webservers]
-10.0.0.5
-10.0.0.6
-10.0.0.7
+- Move Playbooks and hosts file into /etc/ansible:
+  - cp elk-stack-project-1/playbooks/* .
+  - cp elk-stack-project-1/files/* ./files
 
-[elk]
-10.1.0.6
+- Update host file:
+  - cd /etc/ansible
+  -hosts
+   - [webservers]
+   - 10.0.0.5
+   - 10.0.0.6
+   - 10.0.0.7
 
-Run the playbook:
-cd /etc/ansible
-ansible-playbook elk-playbook.yml
+   - [elk]
+   - 10.1.0.6
+
+- Run the playbook:
+  - cd /etc/ansible
+  - ansible-playbook elk-playbook.yml
 
